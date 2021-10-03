@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @Hans-Peter60
+- 👋 Hi, I’m Peter
 - 👀 I’m interested in iOS app development
 - 🌱 I’m currently learning Swift
 - 💞️ I’m looking to collaborate on Swift and app development
