@@ -43,11 +43,13 @@ struct RecipeDetailView: View {
                         VStack(alignment: .leading) {
                             ForEach(0..<recipe.components[i].incredients.count, id:\.self) { j in
                                 
-                                if recipe.components[i].incredients[j].weight > 0 {
-
-                                    Text("- " + String(recipe.components[i].incredients[j].weight) + "g " + recipe.components[i].incredients[j].name)
+                                if recipe.components[i].incredients[j].weight != nil {
+                                    HStack {
+                                        Text("- " + String(recipe.components[i].incredients[j].weight!))
+                                        Text("g " + recipe.components[i].incredients[j].name)
+                                    }
                                 } else {
-                                    Text("- " + recipe.components[i].incredients[j].name)                                    
+                                    Text("- " + recipe.components[i].incredients[j].name)
                                 }
                             }
                         }

@@ -10,7 +10,7 @@ import Foundation
 class RecipeModel: ObservableObject {
     
     @Published var recipes = [Recipe]()
-    var jsonRecipes = [Recipe]()
+    var recipeData = [Recipe]()
 
     init() {
         
@@ -30,16 +30,24 @@ class RecipeModel: ObservableObject {
                 
                 do {
                     // Try to decode the json data into instances of Recipes
-                    jsonRecipes = try decoder.decode([Recipe].self, from: data)
+                    recipeData = try decoder.decode([Recipe].self, from: data)
                     
                     
                     // Loop through recipes and add Ids
-                    for index in 0..<jsonRecipes.count {
-                        jsonRecipes[index].id = UUID()
+                    for r in recipeData {
+                        r.id = UUID()
+                    
+                        for i in r.components {
+                            i.id = UUID()
+                        
+                            for j in i.incredients {
+                                j.id = UUID()
+                            }
+                        }
                     }
                     
                     // Assign to recipes property
-                    self.recipes = jsonRecipes
+                    self.recipes = recipeData
                 }
                 catch {
                     print("Couldn't parse Recipes")

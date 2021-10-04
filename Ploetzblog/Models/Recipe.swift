@@ -7,23 +7,26 @@
 
 import Foundation
 
-struct Incredient: Decodable {
+class Incredient: Identifiable, Decodable {
+    var id:UUID?
     var name:String
-    var weight:Int
+    var weight:Int?
 }
 
-struct Component: Decodable {
+class Component: Identifiable, Decodable {
+    var id:UUID?
     var name:String
     var incredients:[Incredient]
 }
 
-struct Instruction: Decodable {
+class Instruction: Identifiable, Decodable {
+    var id:UUID?
     var description:String
     var duration:Int
 //    var duration2:Date?
 }
 
-struct Recipe: Identifiable, Decodable {
+class Recipe: Identifiable, Decodable {
     
     // The id property is for the Identifiable protocol which we need to display these instances in a SwiftUI List
     var id:UUID?
@@ -32,7 +35,7 @@ struct Recipe: Identifiable, Decodable {
     var name:String
     var image:String
     var description:String
-    var components: [Component]
-    var instructions: [Instruction]
+    var components:[Component]
+    var instructions:[Instruction]
 //    var tags:[String]
 }
