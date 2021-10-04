@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct RecipeListView: View {
     
     @ObservedObject var model = RecipeModel()
     
@@ -24,7 +24,6 @@ struct ContentView: View {
                             Image(r.image)
                                 .resizable()
                                 .scaledToFill()
-                                .aspectRatio(contentMode: .fill)
                                 .frame(width: 50.0, height: 50.0, alignment: .center)
                                 .clipped()
                                 .cornerRadius(5)
@@ -39,8 +38,8 @@ struct ContentView: View {
     
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct RecipeListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RecipeListView()
     }
 }

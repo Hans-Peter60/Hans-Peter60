@@ -17,10 +17,9 @@ struct RecipeDetailView: View {
         
             VStack {
                 HStack {
-                    Image(recipe.image).resizable()
+                    Image(recipe.image)
                         .resizable()
                         .scaledToFill()
-                        .aspectRatio(contentMode: .fill)
                         .frame(width: 80.0, height: 80.0, alignment: .center)
                         .clipped()
                         .cornerRadius(5)
@@ -48,8 +47,7 @@ struct RecipeDetailView: View {
 
                                     Text("- " + String(recipe.components[i].incredients[j].weight) + "g " + recipe.components[i].incredients[j].name)
                                 } else {
-                                    Text("- " + recipe.components[i].incredients[j].name)
-                                    
+                                    Text("- " + recipe.components[i].incredients[j].name)                                    
                                 }
                             }
                         }

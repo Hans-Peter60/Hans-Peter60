@@ -11,7 +11,7 @@ import SwiftUI
 struct PloetzblogApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RecipeTabView()
         }
     }
 }
